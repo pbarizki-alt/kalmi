@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Remi - Dark Mode</title>
+    
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e293b">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,10 +18,9 @@
         <div id="game-screen">
             
             <div class="cheat-sheet">
-                <strong>💡 Aturan Poin Remi:</strong> As = 15 | J, Q, K, 10 = 10 | 2-9 = 5 
-                <br><em>(Diturunkan = Positif, Sisa di Tangan = Minus)</em>
+                <strong>💡 Aturan Poin Remi:</strong> (As = 15) (J, Q, K, 10 = 10) (2-9 = 5) 
                 <br><br>
-                <strong style="color: #38bdf8;">✏️ Tips Edit:</strong> Klik nama pemain (di atas) atau klik angka skor (di tabel bawah) untuk mengubah data jika salah ketik.
+                <strong style="color: #38bdf8;">✏️ Tips Edit:</strong> Klik nama pemain atau klik angka skor (di tabel bawah) untuk mengubah data jika salah ketik.
             </div>
 
             <div class="leaderboard-grid" id="leaderboard-container">
@@ -51,7 +52,11 @@
         </div>
     </div>
 
-<script src="script.js"></script>
+    <div id="surprise-overlay">
+        <h1 id="surprise-text-content" class="surprise-text">MAINE DIBENER!</h1>
+    </div>
+
+    <script src="script.js"></script>
 
     <script>
         if ('serviceWorker' in navigator) {
@@ -66,12 +71,5 @@
             });
         }
     </script>
-<div id="surprise-overlay" class="hidden">
-        <h1 class="surprise-text">MAINE DIBENER!</h1>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
 </body>
 </html>

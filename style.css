@@ -240,3 +240,62 @@ tr:last-child td {
     background-color: #334155;
     color: #38bdf8 !important;
 }
+
+/* === OVERLAY KEJUTAN -100 === */
+#surprise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    
+    /* Ubah ini jadi none agar default-nya sembunyi */
+    display: none; 
+    
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Class baru untuk memunculkan kejutan */
+.show-surprise {
+    display: flex !important;
+}
+
+.surprise-text {
+    font-size: 4.5rem;
+    color: #ff0000;
+    text-align: center;
+    text-shadow: 0 0 20px #ff0000, 0 0 40px #8a0000;
+    animation: popAndShake 0.6s ease forwards;
+}
+
+@keyframes popAndShake {
+    0% { transform: scale(0); opacity: 0; }
+    40% { transform: scale(1.2); opacity: 1; }
+    50% { transform: scale(1) rotate(-5deg); }
+    60% { transform: scale(1) rotate(5deg); }
+    70% { transform: scale(1) rotate(-5deg); }
+    80% { transform: scale(1) rotate(5deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* === GELAR PENGOCOK HANDAL === */
+.pengocok-badge {
+    position: absolute;
+    top: -14px;
+    right: -10px;
+    background: #ca8a04; 
+    color: #fef08a; 
+    font-size: 9px;
+    font-weight: 900;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 2px solid #fef08a;
+    transform: rotate(15deg);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    z-index: 10;
+    pointer-events: none; /* Agar tidak mengganggu klik saat mau edit nama */
+    text-transform: uppercase;
+}
