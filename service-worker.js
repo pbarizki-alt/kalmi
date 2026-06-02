@@ -1,4 +1,4 @@
-const CACHE_NAME = 'remi-score-cache-v2';
+const CACHE_NAME = 'remi-score-cache-v3';
 const urlsToCache = [
   './',
   './index.html',
