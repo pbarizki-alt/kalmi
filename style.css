@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    background: #1e293b;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+    padding: 24px;
+    margin-bottom: 40px;
+    border: 1px solid #334155;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+/* === UTILITY COMPONENTS === */
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #0f172a;
+    border: 2px solid #334155;
+    color: #f8fafc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #38bdf8;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0284c7;
+}
+
+button.btn-secondary {
+    background-color: #475569;
+}
+button.btn-secondary:hover {
+    background-color: #334155;
+}
+
+/* === DASHBOARD & LEADERBOARD === */
+.leaderboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.card-player {
+    background: #0f172a;
+    border: 2px solid #334155;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.card-player .name {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #94a3b8;
+}
+
+.card-player .score {
+    font-size: 28px;
+    font-weight: 800;
+    color: #f8fafc;
+}
+
+/* Status RT (Minus Terbanyak) */
+.card-player.is-rt {
+    background: #450a0a;
+    border-color: #dc2626;
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
+}
+
+.card-player.is-rt .score {
+    color: #fca5a5;
+}
+
+.card-player.is-rt .name {
+    color: #f87171;
+}
+
+.rt-badge {
+    display: none;
+    background: #dc2626;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 20px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.card-player.is-rt .rt-badge {
+    display: block;
+}
+
+/* === ROUND INPUT FORM === */
+.round-box {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.round-box h3 {
+    margin-bottom: 14px;
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 15px;
+}
+
+.input-row label {
+    font-weight: 600;
+    flex: 1;
+    color: #e2e8f0;
+}
+
+.input-row input {
+    width: 120px;
+    text-align: center;
+}
+
+/* === SCOREBOARD TABLE === */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    background: #0f172a;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background-color: #1e293b;
+    color: #94a3b8;
+    padding: 12px;
+    font-weight: 600;
+    border-bottom: 2px solid #334155;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #334155;
+    color: #e2e8f0;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* === CHEAT SHEET === */
+.cheat-sheet {
+    background: #172554;
+    border: 1px dashed #3b82f6;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #bfdbfe;
+    text-align: center;
+}
+
+.footer-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 10px;
+}
+
+/* === KELAS KHUSUS FITUR EDIT === */
+.editable-text {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.editable-text:hover {
+    color: #38bdf8 !important;
+}
+
+.editable-score {
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.editable-score:hover {
+    background-color: #334155;
+    color: #38bdf8 !important;
+}

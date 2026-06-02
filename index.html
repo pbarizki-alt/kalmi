@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Remi - Dark Mode</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e293b">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🃏 Remi Scorekeeper</h1>
+
+        <div id="game-screen">
+            
+            <div class="cheat-sheet">
+                <strong>💡 Aturan Poin Remi:</strong> As = 15 | J, Q, K, 10 = 10 | 2-9 = 5 
+                <br><em>(Diturunkan = Positif, Sisa di Tangan = Minus)</em>
+                <br><br>
+                <strong style="color: #38bdf8;">✏️ Tips Edit:</strong> Klik nama pemain (di atas) atau klik angka skor (di tabel bawah) untuk mengubah data jika salah ketik.
+            </div>
+
+            <div class="leaderboard-grid" id="leaderboard-container">
+                </div>
+
+            <div class="round-box">
+                <h3 id="round-title">Input Skor Ronde 1</h3>
+                <div id="round-inputs-container">
+                    </div>
+                <button id="btn-submit-round">Simpan Skor Ronde</button>
+            </div>
+
+            <h3 style="font-size: 16px; margin-bottom: 8px; color: #94a3b8;">Riwayat Per Ronde:</h3>
+            <div class="table-responsive">
+                <table id="scoreboard-table">
+                    <thead>
+                        <tr id="table-header-row">
+                            <th>Ronde</th>
+                            </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="footer-actions">
+                <button id="btn-reset-game" class="btn-secondary">Reset Game ke Nol</button>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker sukses didaftarkan!');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker gagal didaftarkan: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
